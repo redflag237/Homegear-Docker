@@ -1,5 +1,7 @@
 FROM debian:stretch
 MAINTAINER Sathya Laufer <sathya@homegear.email>
+RUN addgroup -S homegear
+RUN adduser --disabled-password --gecos '' homegear homegear
 RUN apt-get update && apt-get -y install apt-transport-https wget ca-certificates apt-utils gnupg libzip4 libavahi-client3 libavahi-client-dev insserv
 RUN \
     touch /tmp/HOMEGEAR_STATIC_INSTALLATION; \
